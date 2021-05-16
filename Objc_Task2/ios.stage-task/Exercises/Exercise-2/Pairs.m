@@ -1,3 +1,6 @@
+
+
+
 #import "Pairs.h"
 
 @implementation Pairs
@@ -8,7 +11,13 @@
     NSInteger result = 0;
     NSInteger number1 = [number intValue];
     
-    
+ if ( [array isEqualToArray:@[]] || array.count < 2) {
+ 
+ return 0;
+ 
+ }
+ 
+ 
     NSMutableArray* array2 = [[NSMutableArray alloc]init];
     
     
@@ -23,12 +32,12 @@
         }];
         
     
-        for(NSInteger b = 0; b < array2.count; b++ ){
+        for(NSInteger b = 1; b  < array2.count; b++ ){
             
-         int v = [[array2 objectAtIndex: b ] intValue];
+         int v = [[array2 objectAtIndex: b  ] intValue];
             int vv = [[array2 objectAtIndex: 0 ] intValue];
             
-            if (v - vv == number1) {
+            if (v - vv == number1 || vv - v  == number1 ) {
                 
                 result += 1;
                 
@@ -49,5 +58,7 @@
     
     return result;
 }
+
+
 
 @end
